@@ -3,13 +3,13 @@ import fs from "fs";
 
 //add food item
 const addFood = async (req, res) => {
-  let image_filiname = "${req.file.filename}";
+  let image_filename = `${req.file.filename}`; 
   const food = new foodModel({
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
     category: req.body.category,
-    image: image_filiname,
+    image: image_filename,
   });
   try {
     await food.save();
