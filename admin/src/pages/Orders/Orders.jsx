@@ -37,27 +37,27 @@ const Orders = ({ url }) => {
                 })}
               </p>
               <p className="order-item-name">
-                {order.address.firstName +""+order.address.lastName}
+                {JSON.parse(order.address).firstName + " " + JSON.parse(order.address).lastName}
               </p>
               <div className="order-item-address">
-                <p>{order.address.street + ","}</p>
+                <p>{JSON.parse(order.address).street + ","}</p>
                 <p>
-                  {order.address.city +
+                  {JSON.parse(order.address).city +
                     "," +
-                    order.address.state +
+                    JSON.parse(order.address).state +
                     "," +
-                    order.address.country +
+                    JSON.parse(order.address).country +
                     "," +
-                    order.address.zipCode}
+                    JSON.parse(order.address).zipcode}
                 </p>
               </div>
 
-              <p className="order-item-phone">{order.address.phone}</p>
+              <p className="order-item-phone">{JSON.parse(order.address).phone}</p>
             </div>
             <p>Items:{order.items.length}</p>
             <p>${order.amount}</p>
             <select>
-            <option value="Food Processing">Food Processing</option>
+              <option value="Food Processing">Food Processing</option>
               <option value="out for delivery">out for delivery</option>
               <option value="dispatched">dispatched</option>
             </select>
